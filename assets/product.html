@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fonts.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <title>Аркейн Продукт</title>
+</head>
+<body>
+    <div class="spacing"></div>
+
+    <div class="header">
+        <div class="header__cont">
+            <div class="header__cont-logo" onclick="window.location.href='index.html'">
+                Аркейн
+            </div>
+            <div class="header__cont-nav">
+                <a href="index.html" class="header__cont-nav_a">Главная</a>
+                <a href="catalog.html" class="header__cont-nav_a">Каталог</a>
+            </div>
+            <div class="header__cont-menu">
+                <button class="header__cont-menu_btn" onclick="themeChange()">
+                    <!-- <img src="./assets/search.svg" alt="Search" class="cont__menu-btn_img"> -->
+                    <svg class="header__cont-menu_btn-img" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="11.5" cy="11.5" r="9.5"/><path d="M18.5 18.5L22 22" stroke-width="1.5" stroke-linecap="round"/></svg>
+                </button>
+                <button class="header__cont-menu_btn">
+                    <!-- <img src="./assets/bag.svg" alt="Cart" class="cont__menu-btn_img"> -->
+                    <img src="./assets/cart.svg" alt="Cart" class="header__cont-menu_btn-img">
+                    <div class="header__cont-menu_btn-text">Корзина</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        <div class="product__cont">
+            <a href="" class="product__cont-back">Назад в каталог</a>
+            <div class="product__cont-main">
+                <div class="product__cont-main_image">
+                    <img src="" alt="Photo">
+                </div>
+                <div class="product__cont-main_info">
+                    <div class="product__cont-main_info-bc">
+                        <span class="product__cont-main_info-bc_brand"></span>
+                        <span class="product__cont-main_info-bc_splinter">·</span>
+                        <span class="product__cont-main_info-bc_category"></span>
+                    </div>
+                    <div class="product__cont-main_info-name"></div>
+                    <div class="product__cont-main_info-rating">
+                        <div class="product__cont-main_info-rating_stars">
+                            <img src="./assets/Star.svg" alt="Star">
+                            <img src="./assets/Star.svg" alt="Star">
+                            <img src="./assets/Star.svg" alt="Star">
+                            <img src="./assets/Star.svg" alt="Star">
+                            <img src="./assets/Star.svg" alt="Star">
+                        </div>
+                        <span class="product__cont-main_info-rating_count"></span>
+                        <span class="product__cont-main_info-rating_reviews"></span>
+                    </div>
+                    <div class="product__cont-main_info-price">
+                        <span class="product__cont-main_info-price_new"></span>
+                        <span class="product__cont-main_info-price_original"></span>
+                    </div>
+                    <p class="product__cont-main_info-description"></p>
+                    <div class="product__cont-main_info-specs">
+                        <div class="product__cont-main_info-specs_head">
+                            <h3 class="product__cont-main_info-specs_head-title">Характеристики</h3>
+                        </div>
+                        <div class="product__cont-main_info-specs_list">
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/CPU.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec"></span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info"></span>
+                                </div>
+                            </div>
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/memory.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec"></span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info"></span>
+                                </div>
+                            </div>
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/ssd.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec"></span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info"></span>
+                                </div>
+                            </div>
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/monitor.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec"></span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info"></span>
+                                </div>
+                            </div>
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/battery.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec"></span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info"></span>
+                                </div>
+                            </div>
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/weight.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec"></span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product__cont-main_menu">
+                        <div class="product__cont-main_menu-countedit">
+                            <button class="product__cont-main_menu-countedit_minus"></button>
+                            <button class="product__cont-main_menu-countedit_minus"></button>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/config.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/something.js"></script>
+</body>
+</html>

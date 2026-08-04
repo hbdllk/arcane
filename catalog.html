@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/product.css">    
+    <title>Аркейн Каталог</title>
+</head>
+<body>
+    <div class="spacing"></div>
+
+    <div class="header">
+        <div class="header__cont">
+            <div class="header__cont-logo" onclick="window.location.href='index.html'">
+                Аркейн
+            </div>
+            <div class="header__cont-nav">
+                <a href="index.html" class="header__cont-nav_a header__cont-nav_a-nonactive">Главная</a>
+                <a href="catalog.html" class="header__cont-nav_a header__cont-nav_a-active">Каталог</a>
+            </div>
+            <div class="header__cont-menu">
+                <button class="header__cont-menu_btn" onclick="themeChange()">
+                    <img src="./assets/moon.svg" alt="Dark theme" class="header__cont-menu_btn-light">
+                    <img src="./assets/sun.svg" alt="Light theme" class="header__cont-menu_btn-dark hidden">
+                </button>
+                <button class="header__cont-menu_btn" onclick="window.location.href='cart.html'">
+                    <img src="./assets/cart.svg" alt="Cart" class="header__cont-menu_btn-img">
+                    <div class="header__cont-menu_btn-text">Корзина</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="catalog">
+        <div class="catalog__cont">
+            <div class="catalog__cont-head">
+                <p class="catalog__cont-head_subtitle subtitle">ВСЕ ПРОДУКТЫ</p>
+                <h2 class="catalog__cont-head_title title">Полный каталог</h2>
+            </div>
+            <div class="catalog__cont-filter">
+
+            </div>
+            <div class="catalog__cont-box">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer__cont">
+            <div class="footer__cont-main">
+                <div class="footer__cont-main_box">
+                    <button class="footer__cont-main_box-logo" onclick="document.location='./index.html'">
+                        Аркейн
+                    </button>
+                    <p class="footer__cont-main_box-description">
+                        Тщательно отобранные ноутбуки для тех, кто работает на совесть.
+                    </p>
+                    <div class="footer__cont-main_box-links">
+                        <button class="footer__cont-main_box-links_btn">
+
+                        </button>
+                        <button class="footer__cont-main_box-links_btn">
+
+                        </button>
+                        <button class="footer__cont-main_box-links_btn">
+
+                        </button>
+                    </div>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">МАГАЗИН</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Все ноутбуки
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Профессиональные
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Игровые
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Ультрабуки
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Творческие
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">КОМПАНИЯ</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                О нас
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Блог
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Карьера
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Пресса
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">ПОДДЕРЖКА</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Центр помощи
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Доставка
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Возврат
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Гарантия
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">ПРАВОВАЯ ИНФОРМАЦИЯ</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Политика конфиденциальности
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Условия использования
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Настройки файлов cookie
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__cont-end">
+                <p class="footer__cont-end_p">
+                    © 2026 Arcane Technologies. Все права защищены.
+                </p>
+                <p class="footer__cont-end_p">
+                    Сделано с душой. Продумано наперёд.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/config.js"></script>
+    <script src="./js/utils.js"></script>
+</body>
+</html>

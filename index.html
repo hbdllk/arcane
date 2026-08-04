@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <title>Аркейн</title>
+</head>
+<body>
+    <div class="spacing"></div>
+
+    <div class="header">
+        <div class="header__cont">
+            <div class="header__cont-logo" onclick="window.location.href='index.html'">
+                Аркейн
+            </div>
+            <div class="header__cont-nav">
+                <a href="index.html" class="header__cont-nav_a header__cont-nav_a-active">Главная</a>
+                <a href="catalog.html" class="header__cont-nav_a header__cont-nav_a-nonactive">Каталог</a>
+            </div>
+            <div class="header__cont-menu">
+                <button class="header__cont-menu_btn" onclick="themeChange()">
+                    <img src="./assets/moon.svg" alt="Dark theme" class="header__cont-menu_btn-light">
+                    <img src="./assets/sun.svg" alt="Light theme" class="header__cont-menu_btn-dark hidden">
+                </button>
+                <button class="header__cont-menu_btn" onclick="window.location.href='cart.html'">
+                    <img src="./assets/cart.svg" alt="Cart" class="header__cont-menu_btn-img">
+                    <div class="header__cont-menu_btn-text">Корзина</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero__cont">
+            <span class="hero__cont-news">
+                <div class="hero__cont-news_pulsar"></div>
+                Подборка для профессионалов
+            </span>
+            <div class="hero__cont-title">
+                <h1 class="hero__cont-title_h1">
+                    Машины, которые <br>
+                    <span>думают вместе с вами</span>
+                </h1>
+            </div>
+            <div class="hero__cont-subtitle">
+                <span class="hero__cont-subtitle_span">
+                    Тщательно отобранные ноутбуки для разработчиков, дизайнеров и творческих людей, <br>
+                    которые не готовы идти на компромисс в выборе инструментов, <br>
+                    с которыми работают весь день.
+                </span>
+            </div>
+            <div class="hero__cont-menu">
+                <button class="hero__cont-menu_btn" onclick="document.location='./catalog.html'">
+                    Перейти в каталог
+                    <img class="hero__cont-menu_btn-img" src="./assets/arrow.svg" alt="Arrow">
+                </button>
+                <button class="hero__cont-menu_btn" onclick="document.location='./catalog.html'">Новое</button>
+            </div>
+            <div class="hero__cont-advantages">
+                <div class="hero__cont-advantages_item">
+                    <span class="hero__cont-advantages_item-info">8+</span>
+                    <span class="hero__cont-advantages_item-name">Устройств</span>
+                </div>
+                <div class="hero__cont-advantages_item">
+                    <span class="hero__cont-advantages_item-info">7</span>
+                    <span class="hero__cont-advantages_item-name">Брэндов</span>
+                </div>
+                <div class="hero__cont-advantages_item">
+                    <span class="hero__cont-advantages_item-info">160 000 ₽</span>
+                    <span class="hero__cont-advantages_item-name">Средняя цена</span>
+                </div>
+                <div class="hero__cont-advantages_item">
+                    <span class="hero__cont-advantages_item-info">APPLE</span>
+                    <span class="hero__cont-advantages_item-name">Лучший выбор</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spliter"></div>
+
+    <div class="arrivals">
+        <div class="arrivals-head">
+            <div class="arrivals-head_text">
+                <p class="arrivals-head_text-subtitle subtitle">УЖЕ ТУТ</p>
+                <h2 class="arrivals-head_text-title title">Новинки</h2>
+            </div>
+            <a href="./catalog.html" class="arrivals-head_btn">Смотреть всё</a>
+        </div>
+        <div class="arrivals-box">
+
+        </div>
+    </div>
+
+    <div class="spliter"></div>
+
+    <div class="categories">
+        <div class="categories__cont">
+            <div class="categories__cont-head">
+                <p class="categories__cont-head_subtitle subtitle">КАТЕГОРИИ</p>
+                <h2 class="categories__cont-head_title title">Типы ноутбуков</h2>
+            </div>
+            <div class="categories__cont-box">
+                <button class="categories__cont-box_card" onclick="document.location='./catalog.html'">
+                    <div class="categories__cont-box_card-div">
+                        <!-- svg -->
+                        <picture>
+                            <source srcset="./assets/pallete-light.svg" media="(prefers-color-scheme: light)">
+                            <source srcset="./assets/pallete-dark.svg" media="(prefers-color-scheme: dark)">
+                            <img class="categories__cont-box_card-img" src="./assets/pallete-light.svg" alt="Творческий">
+                        </picture>
+                        <div class="categories__cont-box_card-text">
+                           <h3 class="categories__cont-box_card-text_title">Творческий</h3>
+                            <p class="categories__cont-box_card-text_description">
+                                Производительность + точность цветов
+                            </p>
+                        </div>
+                        <span class="categories__cont-box_card-btn">
+                            2 модели
+                        </span>
+                    </div>
+                </button>
+                <button class="categories__cont-box_card" onclick="document.location='./catalog.html'">
+                    <div class="categories__cont-box_card-div">
+                        <!-- svg -->
+                         <img class="categories__cont-box_card-img" src="./assets/gamepad-light.svg" alt="what">
+                        <div class="categories__cont-box_card-text">
+                           <h3 class="categories__cont-box_card-text_title">Игровой</h3>
+                            <p class="categories__cont-box_card-text_description">
+                                Высокая частота кадров. Без компромиссов
+                            </p>
+                        </div>
+                        <span class="categories__cont-box_card-btn">
+                            3 модели
+                        </span>
+                    </div>
+                </button>
+                <button class="categories__cont-box_card" onclick="document.location='./catalog.html'">
+                    <div class="categories__cont-box_card-div">
+                        <!-- svg -->
+                         <img class="categories__cont-box_card-img" src="./assets/case-light.svg" alt="Case">
+                        <div class="categories__cont-box_card-text">
+                           <h3 class="categories__cont-box_card-text_title">Профессиональный</h3>
+                            <p class="categories__cont-box_card-text_description">
+                                Для совещаний и не только
+                            </p>
+                        </div>
+                        <span class="categories__cont-box_card-btn">
+                            2 модели
+                        </span>
+                    </div>
+                </button>
+                <button class="categories__cont-box_card" onclick="document.location='./catalog.html'">
+                    <div class="categories__cont-box_card-div">
+                        <!-- svg -->
+                        <img class="categories__cont-box_card-img" src="./assets/rocket-light.svg" alt="Rocket">
+                        <div class="categories__cont-box_card-text">
+                           <h3 class="categories__cont-box_card-text_title">Ультрабук</h3>
+                            <p class="categories__cont-box_card-text_description">
+                                Бери с собой куда угодно
+                            </p>
+                        </div>
+                        <span class="categories__cont-box_card-btn">
+                            2 модели
+                        </span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="featured">
+        <div class="featured-head">
+            <div class="featured-head_text">
+                <p class="featured-head_text-subtitle subtitle">ВЫБОР РЕДАКЦИИ</p>
+                <h2 class="featured-head_text-title title">Лучшие устройства</h2>
+            </div>
+            <a href="./catalog.html" class="featured-head_btn">Смотреть всё</a>
+        </div>
+        <div class="featured-box">
+
+        </div>
+    </div>
+
+    <div class="brands">
+        <div class="brands__cont">
+            <div class="brands__cont-head">
+                <p class="brands__cont-head_subtitle subtitle">В НАШЕМ КАТАЛОГЕ</p>
+                <h2 class="brands__cont-head_title title">Имеющиеся брэнды</h2>
+            </div>
+            <div class="brands__cont-box">
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">Apple</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Премиум, дизайн, надёжность, экосистема
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">HUAWEI</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Технологии, стиль, бесшовная связь
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">Lenovo</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Практичные решения для всех
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">Asus</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Производительность и смелый дизайн
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">MSI</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Игровые монстры без компромиссов
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">HONOR</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Лёгкость, стиль, умные технологии
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">THUNDEROBOT</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Игровые ноутбуки без переплат
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">Microsoft</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Гибкие трансформеры от Microsoft
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="comments">
+        <div class="comments__cont">
+            <div class="comments__cont-head">
+                <p class="comments__cont-head_subtitle subtitle">ПРОВЕРЕНО ПРОФЕССИОНАЛАМИ</p>
+                <h2 class="comments__cont-head_title title">Комментарии от пользователей</h2>
+            </div>
+            <div class="comments__cont-box">
+                <div class="comments__cont-box_card">
+                    <div class="comments__cont-box_card-stars">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                    </div>
+                    <p class="comments__cont-box_card-text">
+                        “Я скептически относился к покупке ноутбука онлайн, но подбор Arcane всё упростил. Взял MacBook Pro 15 M5 — лучшее решение за всю мою карьеру.”
+                    </p>
+                    <p class="comments__cont-box_card-name">Миа Танака</p>
+                    <p class="comments__cont-box_card-job">Ведущий iOS-разработчик</p>
+                </div>
+                <div class="comments__cont-box_card">
+                    <div class="comments__cont-box_card-stars">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                    </div>
+                    <p class="comments__cont-box_card-text">
+                        “Разбор характеристик и честные описания помогли выбрать подходящую машину, не продираясь сквозь маркетинговую шелуху. HONOR пришёл в идеальном состоянии.”
+                    </p>
+                    <p class="comments__cont-box_card-name">Карлос Ривера</p>
+                    <p class="comments__cont-box_card-job">Моушн-дизайнер</p>
+                </div>
+                <div class="comments__cont-box_card">
+                    <div class="comments__cont-box_card-stars">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                    </div>
+                    <p class="comments__cont-box_card-text">
+                        “Заказал MacBook Air 13 — он почти ничего не весит. Три месяца спустя — всё ещё лучшее, что есть в моей сумке. Качество сайта соответствовало качеству товара.”
+                    </p>
+                    <p class="comments__cont-box_card-name">Элиф Йылмаз</p>
+                    <p class="comments__cont-box_card-job">Фулстек-разработчик</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="advantages">    
+        <div class="advantages__cont-head">
+            <p class="advantages__cont-head_subtitle subtitle">ПОЧЕМУ ARCANE</p>
+            <h2 class="advantages__cont-head_title title">Наши преимущества</h2>
+        </div>
+        <div class="advantages__cont-box">
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/Scooter.svg" alt="Scooter">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">Бесплатная доставка</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        От $500. На следующий день — в большинстве регионов
+                    </p>
+                </div>
+            </div>
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/Shield.svg" alt="Shield">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">3 года гарантии</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        Расширенное покрытие на все устройства без лишних вопросов.
+                    </p>
+                </div>
+            </div>
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/CPU.svg" alt="CPU">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">Экспертный отбор</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        Каждое устройство проверяем сами — бенчмарки и реальные тесты.
+                    </p>
+                </div>
+            </div>
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/Box.svg" alt="Box">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">Лёгкий возврат</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        Передумали? Верните за 30 дней без проблем.
+                    </p>
+                </div>
+            </div>
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/Global.svg" alt="Global">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">Доставка по всему миру</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        Отправляем в более чем 120 стран — полное отслеживание.
+                    </p>
+                </div>
+            </div>
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/Bolt.svg" alt="Bolt">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">Быстрая настройка</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        Предустановленные параметры — ноутбук прибудет готовым к работе.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subscribe">
+        <div class="subscribe__box">
+            <p class="subscribe__box-subtitle">ОСТАВАЙТЕСЬ В КУРСЕ</p>
+            <h2 class="subscribe__box-title">
+                Новинки, эксклюзивные предложения, подборки экспертов.
+            </h2>
+            <p class="subscribe__box-description">
+                Без спама. Одно письмо, когда в каталоге появляется <br> что-то действительно стоящее. Отписаться можно в любой момент.
+            </p>
+            <form action="" class="subscribe__box-form">
+                <input type="email" placeholder="you@domain.com" class="subscribe__box-form_input">
+                <button class="subscribe__box-form_btn">Подписаться</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer__cont">
+            <div class="footer__cont-main">
+                <div class="footer__cont-main_box">
+                    <button class="footer__cont-main_box-logo" onclick="document.location='./index.html'">
+                        Аркейн
+                    </button>
+                    <p class="footer__cont-main_box-description">
+                        Тщательно отобранные ноутбуки для тех, кто работает на совесть.
+                    </p>
+                    <div class="footer__cont-main_box-links">
+                        <button class="footer__cont-main_box-links_btn">
+
+                        </button>
+                        <button class="footer__cont-main_box-links_btn">
+
+                        </button>
+                        <button class="footer__cont-main_box-links_btn">
+
+                        </button>
+                    </div>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">МАГАЗИН</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Все ноутбуки
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Профессиональные
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Игровые
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Ультрабуки
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Творческие
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">КОМПАНИЯ</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                О нас
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Блог
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Карьера
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Пресса
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">ПОДДЕРЖКА</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Центр помощи
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Доставка
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Возврат
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Гарантия
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">ПРАВОВАЯ ИНФОРМАЦИЯ</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Политика конфиденциальности
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Условия использования
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Настройки файлов cookie
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__cont-end">
+                <p class="footer__cont-end_p">
+                    © 2026 Arcane Technologies. Все права защищены.
+                </p>
+                <p class="footer__cont-end_p">
+                    Сделано с душой. Продумано наперёд.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/utils.js"></script>
+</body>
+</html>

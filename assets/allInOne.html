@@ -1,0 +1,1828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/card.css">
+    <link rel="stylesheet" href="./css/product.css">
+    <style>
+      @charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  transition: all 300ms;
+}
+
+:root {
+  color-scheme: light dark;
+  --accentColor: light-dark(#2c56c9, #587ee4);
+  --mainColor: light-dark(#1d212b, #e2e4e9);
+  --secondColor: light-dark(#788191, #788191);
+}
+
+a {
+  color: unset;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.spliter {
+  display: none;
+  height: 5px;
+  width: 100%;
+  background-color: #ff0000;
+}
+
+body {
+  max-width: 100vw;
+  background-color: light-dark(#f5f5f7, #15171e);
+}
+
+.spacing {
+  height: 65px;
+}
+
+.header {
+  height: 65px;
+  width: 100%;
+  background-color: light-dark(rgba(247, 245, 243, 0.75), rgba(21, 23, 30, 0.85));
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid light-dark(#eeeded, #1f2129);
+  margin: auto;
+  padding: 0 20px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.header a {
+  text-decoration: none;
+}
+.header__cont {
+  height: 100%;
+  max-width: 1104px;
+  display: flex;
+  margin: 0 auto;
+  transition: all 0.5s;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__cont-logo {
+  overflow: hidden;
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+}
+.header__cont-logo:hover::after {
+  animation: slide-in 0.65s cubic-bezier(0.8, 0, 0.2, 1) 0s both;
+  transform: translatex(0);
+}
+@keyframes slide-in {
+  from {
+    transform: translatex(-101%);
+  }
+  to {
+    transform: translatex(0);
+  }
+}
+.header__cont-logo::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px; /* Толщина линии */
+  bottom: 0; /* Позиция от низа текста */
+  left: 0;
+  background-color: light-dark(#2c56c9, #587ee4); /* Цвет линии */
+  transform: translatex(-101%);
+}
+.header__cont-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+.header__cont-nav_a {
+  color: light-dark(#788191, #788191);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 2px 4px;
+}
+.header__cont-nav_a:hover {
+  color: light-dark(#1d212b, #e2e4e9);
+}
+.header__cont-nav_a-active {
+  color: light-dark(#1d212b, #e2e4e9);
+  position: relative;
+  display: inline-block;
+}
+.header__cont-nav_a-active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px; /* Толщина линии */
+  bottom: 0; /* Позиция от низа текста */
+  left: 0;
+  background-color: light-dark(#2c56c9, #587ee4); /* Цвет линии */
+}
+.header__cont-menu {
+  height: 100%;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.header__cont-menu_btn {
+  cursor: pointer;
+  height: 36px;
+  min-width: 36px;
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+}
+.header__cont-menu_btn:first-child {
+  background-color: light-dark(#eaecf0, #272a34);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__cont-menu_btn:first-child:hover {
+  transform: scale(1.1);
+}
+.header__cont-menu_btn:first-child:active {
+  transform: scale(0.95);
+}
+.header__cont-menu_btn:first-child img {
+  width: 16px;
+}
+.header__cont-menu_btn:last-child {
+  background-color: light-dark(#2c56c9, #587ee4);
+  padding: 8px 16px;
+  gap: 0.5rem;
+  cursor: not-allowed;
+}
+.header__cont-menu_btn:last-child:hover {
+  transform: scale(1.05);
+}
+.header__cont-menu_btn-text {
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.header__cont-menu_btn-img {
+  width: 16.64px;
+}
+
+.hero {
+  height: 92dvh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+.hero__cont {
+  height: -moz-min-content;
+  height: min-content;
+  width: 896px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.hero__cont-news {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background: light-dark(#e2e5ee, #1c2232);
+  width: -moz-max-content;
+  width: max-content;
+  color: light-dark(#2c56c9, #587ee4);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0 0 32px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  display: flex;
+  gap: 8px;
+}
+@keyframes pulsar {
+  0% {
+    background-color: #2c56c9;
+  }
+  45% {
+    background-color: #6676a1;
+  }
+  55% {
+    background-color: #6676a1;
+  }
+  100% {
+    background-color: #2c56c9;
+  }
+}
+.hero__cont-news_pulsar {
+  background-color: light-dark(#2c56c9, #587ee4);
+  animation: pulsar 2s linear infinite;
+  height: 6px;
+  width: 6px;
+  margin: auto 0;
+  border-radius: 100%;
+}
+.hero__cont-title {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 36px;
+  line-height: 76px;
+  margin: 0 0 24px;
+}
+.hero__cont-title span {
+  background-image: linear-gradient(to right, light-dark(#2c56c9, #587ee4) 0%, #4c9afe 100%);
+  /* обрезаем фон по тексту */
+  -webkit-background-clip: text;
+          background-clip: text;
+  /* меняет цвет текста заголовка на прозрачный что бы можно было увидеть градиент*/
+  -webkit-text-fill-color: transparent;
+}
+.hero__cont-subtitle {
+  color: light-dark(#768093, light-dark(#788191, #788191));
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  margin: 0 0 40px;
+}
+.hero__cont-menu {
+  margin: 0 0 64px;
+  display: flex;
+  gap: 20px;
+}
+.hero__cont-menu_btn {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px;
+  display: flex;
+}
+.hero__cont-menu_btn-img {
+  aspect-ratio: 1/1;
+  width: 18px;
+}
+.hero__cont-menu_btn:first-child {
+  background-color: light-dark(#2c56c9, #587ee4);
+  color: white;
+  gap: 10px;
+}
+.hero__cont-menu_btn:first-child:hover {
+  transform: scale(1.05);
+}
+.hero__cont-menu_btn:last-child {
+  background-color: light-dark(#eaecf0, #272a34);
+  color: light-dark(#1d212b, #e2e4e9);
+}
+.hero__cont-menu_btn:last-child:hover {
+  transform: scale(1.1);
+}
+.hero__cont-advantages {
+  display: flex;
+  gap: 32px;
+}
+.hero__cont-advantages_item {
+  display: flex;
+  flex-direction: column;
+}
+.hero__cont-advantages_item-info {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+}
+.hero__cont-advantages_item-name {
+  color: light-dark(#788191, #788191);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.title {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.subtitle {
+  color: light-dark(#2c56c9, #587ee4);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  padding-bottom: 12px;
+}
+
+.arrivals {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 80px 24px;
+}
+.arrivals-head {
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.arrivals-head_btn {
+  color: light-dark(#2c56c9, #587ee4);
+  padding-block: 5px;
+}
+.arrivals-head_btn:hover {
+  transform: translatex(5px);
+}
+.arrivals-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.categories {
+  background-color: light-dark(#fff, #1b1d25);
+  padding-block: 80px;
+}
+.categories__cont {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+.categories__cont-head {
+  margin-bottom: 48px;
+}
+.categories__cont-box {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+.categories__cont-box_card {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: light-dark(#fbfaf9, #1b1e27);
+  height: 199px;
+  width: 100%;
+  padding: 24px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 2px 6px 10px light-dark(#e9e9e9, rgba(29, 29, 29, 0.692));
+}
+.categories__cont-box_card:hover {
+  transform: translatey(-5px);
+  box-shadow: 2px 11px 10px light-dark(#e9e9e9, rgba(29, 29, 29, 0.692));
+}
+.categories__cont-box_card-div {
+  height: 100%;
+  text-align: left;
+}
+.categories__cont-box_card-img {
+  width: 36px;
+  margin-inline: 2px;
+  margin-bottom: 16px;
+}
+.categories__cont-box_card-text_title {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+.categories__cont-box_card-text_description {
+  height: 39px;
+  color: rgb(120, 129, 145);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 19.5px;
+  margin-bottom: 16px;
+}
+.categories__cont-box_card-btn {
+  color: light-dark(#2c56c9, #587ee4);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+.featured {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 80px 24px;
+}
+.featured-head {
+  margin-bottom: 48px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.featured-head_btn {
+  color: light-dark(#2c56c9, #587ee4);
+  padding-block: 5px;
+}
+.featured-head_btn:hover {
+  transform: translatex(5px);
+}
+.featured-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.brands {
+  background-color: light-dark(#fff, #1b1d25);
+  padding-block: 80px;
+}
+.brands__cont {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+.brands__cont-head {
+  margin-bottom: 48px;
+}
+.brands__cont-box {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0px, 1fr));
+  gap: 16px;
+}
+.brands__cont-box_card {
+  background-color: light-dark(#fbfaf9, #1b1e27);
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0px 2px 6px 0px light-dark(#e9e9e9, rgba(29, 29, 29, 0.692));
+}
+.brands__cont-box_card-title {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+.brands__cont-box_card-subtitle {
+  color: light-dark(light-dark(#788191, #788191), light-dark(#788191, #788191));
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.comments {
+  background-color: light-dark(#f2f2f2, #181c27);
+  padding-block: 80px;
+}
+.comments__cont {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+.comments__cont-head {
+  margin-bottom: 48px;
+}
+.comments__cont-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+  gap: 16px;
+}
+.comments__cont-box_card {
+  background-color: light-dark(#fff, #1b1e27);
+  width: 100%;
+  text-align: left;
+  padding: 20px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0px 2px 6px 0px light-dark(#e9e9e9, rgba(29, 29, 29, 0.692));
+}
+.comments__cont-box_card-stars {
+  margin-bottom: 16px;
+}
+.comments__cont-box_card-text {
+  height: 100px;
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  margin-bottom: 20px;
+}
+.comments__cont-box_card-name {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+.comments__cont-box_card-job {
+  color: light-dark(#788191, #788191);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.advantages {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 80px 24px;
+}
+.advantages__cont {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+.advantages__cont-head {
+  margin-bottom: 48px;
+}
+.advantages__cont-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0px, 1fr));
+  gap: 16px;
+}
+.advantages__cont-box_card {
+  background-color: light-dark(#f2f2f2, #1b1e27);
+  width: 100%;
+  text-align: left;
+  padding: 24px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0px 2px 6px 0px light-dark(#e9e9e9, rgba(29, 29, 29, 0.692));
+  display: flex;
+  gap: 16px;
+}
+.advantages__cont-box_card-icon {
+  background-color: light-dark(#e5eaf4, #21283a);
+  aspect-ratio: 1/1;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+}
+.advantages__cont-box_card-icon_img {
+  margin: auto;
+}
+.advantages__cont-box_card-text_title {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-bottom: 4px;
+}
+.advantages__cont-box_card-text_description {
+  color: light-dark(#788191, #788191);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.subscribe {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 80px 24px;
+}
+.subscribe__box {
+  background-color: light-dark(#2c56c9, #587ee4);
+  text-align: center;
+  padding: 56px;
+  border-radius: 1.5rem;
+}
+.subscribe__box-subtitle {
+  color: light-dark(rgba(255, 255, 255, 0.7019607843), light-dark(#1d212b, #e2e4e9));
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin-bottom: 12px;
+}
+.subscribe__box-title {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  margin-bottom: 16px;
+}
+.subscribe__box-description {
+  color: light-dark(rgba(255, 255, 255, 0.7019607843), light-dark(#1d212b, #e2e4e9));
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 auto 32px auto;
+}
+.subscribe__box-form {
+  width: 448px;
+  margin-inline: auto;
+  display: flex;
+  gap: 15px;
+}
+.subscribe__box-form_input {
+  background-color: #7191e8;
+  color: white;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  width: 100%;
+  padding: 14px 20px;
+  border: none;
+  border-radius: calc(infinity * 1px);
+  outline: none;
+}
+.subscribe__box-form_input::-moz-placeholder {
+  -moz-user-select: none;
+       user-select: none;
+  color: #b8c3f0;
+}
+.subscribe__box-form_input::placeholder {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: #b8c3f0;
+}
+.subscribe__box-form_input:focus {
+  border: none;
+}
+.subscribe__box-form_btn {
+  background-color: white;
+  color: light-dark(#2c56c9, #587ee4);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 14px 20px;
+  border: none;
+  border-radius: calc(infinity * 1px);
+}
+.subscribe__box-form_btn:hover {
+  transform: scale(1.05);
+}
+
+.footer {
+  background-color: light-dark(#fbfaf9, #1b1e27);
+}
+.footer__cont {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 64px 24px 40px;
+}
+.footer__cont-main {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0px, 1fr));
+  gap: 2.5rem;
+  outline: 0 0 1px 0 solid #21232c;
+  outline-offset: -1px;
+}
+.footer__cont-main_box-logo {
+  all: unset;
+  height: 32px;
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  margin-bottom: 16px;
+}
+.footer__cont-main_box-description {
+  color: light-dark(#788191, #788191);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 23px;
+}
+.footer__cont-main_box-links {
+  margin-top: 20px;
+  display: flex;
+  gap: 0.75rem;
+}
+.footer__cont-main_box-links_btn {
+  background-color: light-dark(#eaecf0, #272a34);
+  aspect-ratio: 1/1;
+  height: 32px;
+  border: none;
+  border-radius: calc(infinity * 1px);
+}
+.footer__cont-main_box-title {
+  color: light-dark(#788191, #788191);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  margin-bottom: 16px;
+}
+.footer__cont-main_box-list {
+  color: light-dark(#788191, #788191);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer__cont-main_box-list_item a {
+  color: light-dark(#788191, #788191);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.footer__cont-main_box-list_item a:hover {
+  color: light-dark(#1d212b, #e2e4e9);
+}
+.footer__cont-end {
+  color: light-dark(#788191, #788191);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  margin-top: 32px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.catalog {
+  min-height: 60vh;
+  border-bottom: 1px soliod #2d3039;
+}
+.catalog__cont {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 48px 24px;
+}
+.catalog__cont-head {
+  margin-bottom: 40px;
+}
+.catalog__cont-box {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.hidden {
+  display: none;
+}/*# sourceMappingURL=main.css.map */
+
+.product {
+  background-color: light-dark(#f7f5f3, #15171e);
+  height: 100dvh;
+  width: 100vw;
+  padding-top: 65px;
+  border-bottom: 1px soliod #2d3039;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+.product__cont {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 32px;
+}
+.product__cont-back {
+  cursor: pointer;
+  background-color: transparent;
+  color: light-dark(#788191, #788191);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 10px;
+  border: none;
+}
+.product__cont-back:hover {
+  color: light-dark(#2c56c9, #587ee4);
+  transform: translatex(-5px);
+}
+.product__cont-main {
+  padding-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 48px;
+}
+.product__cont-main_image {
+  background-color: #1b1e27;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  width: 100%;
+  border-radius: 24px;
+}
+.product__cont-main_image img {
+  width: 100%;
+}
+.product__cont-main_info-bc {
+  margin-bottom: 4px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.product__cont-main_info-bc_brand {
+  color: light-dark(#2c56c9, #587ee4);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-transform: uppercase;
+}
+.product__cont-main_info-bc_splinter {
+  color: light-dark(#788191, #788191);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.product__cont-main_info-bc_category {
+  color: light-dark(#788191, #788191);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.product__cont-main_info-name {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 38px;
+  margin-bottom: 16px;
+}
+.product__cont-main_info-rating {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 8px;
+}
+.product__cont-main_info-rating_stars {
+  display: flex;
+  gap: 2px;
+}
+.product__cont-main_info-rating_stars img {
+  height: 12px;
+  margin-block: auto;
+}
+.product__cont-main_info-rating_count {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.product__cont-main_info-rating_reviews {
+  color: light-dark(#788191, #788191);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.product__cont-main_info-price {
+  margin-bottom: 24px;
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+.product__cont-main_info-price_new {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+}
+.product__cont-main_info-price_original {
+  color: light-dark(#788191, #788191);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  text-decoration: line-through;
+}
+.product__cont-main_info-description {
+  color: light-dark(#788191, #788191);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 23px;
+  margin-bottom: 28px;
+}
+.product__cont-main_info-specs {
+  background-color: light-dark(#fbfaf9, #1b1e27);
+  min-height: 100px;
+  border-radius: 16px;
+}
+.product__cont-main_info-specs_head {
+  padding: 16px 20px 4px;
+}
+.product__cont-main_info-specs_head-title {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.product__cont-main_info-specs_list {
+  padding: 0 20px 12px;
+}
+.product__cont-main_info-specs_list-item {
+  padding-block: 14px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.product__cont-main_info-specs_list-item_icon {
+  background-color: light-dark(#e5eaf4, #21283a);
+  aspect-ratio: 1/1;
+  width: 32px;
+  border-radius: calc(infinity * 1px);
+  display: flex;
+}
+.product__cont-main_info-specs_list-item_icon img {
+  width: 14px;
+  margin: auto;
+}
+.product__cont-main_info-specs_list-item_text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.product__cont-main_info-specs_list-item_text-spec {
+  color: light-dark(#788191, #788191);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+.product__cont-main_info-specs_list-item_text-info {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}/*# sourceMappingURL=product.css.map */
+
+@keyframes fade-in {
+  from {
+    transform: translatey(50px) scale(0.9);
+    opacity: 0.5;
+    filter: blur(5px);
+  }
+  to {
+    transform: translatey(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+.card {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: light-dark(#fbfaf9, #1b1e27);
+  color: rgb(0, 0, 0);
+  width: 352px;
+  border-radius: 16px;
+  margin: auto;
+  transform: scale(1) translate(0);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px light-dark(#e9e9e9, rgba(29, 29, 29, 0.692));
+  overflow: hidden;
+}
+.card:hover {
+  transition: all 0.5s;
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 10px light-dark(#e9e9e9, rgba(29, 29, 29, 0.692));
+}
+.card:hover img {
+  transform: scale(1.05);
+}
+.card__image {
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+.card__image img {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.card__info {
+  height: 177.5px;
+  padding: 16px;
+}
+.card__info-name {
+  margin-bottom: 4px;
+}
+.card__info-name_brand {
+  color: #788191;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.card__info-name_model {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.5px;
+}
+.card__info-rating {
+  margin-block: 8px 12px;
+  display: flex;
+  gap: 6px;
+}
+.card__info-rating_stars {
+  display: flex;
+  gap: 2px;
+}
+.card__info-rating_stars img {
+  height: 12px;
+  margin-block: auto;
+}
+.card__info-rating_reviews {
+  color: #788191;
+  font-size: 12px;
+  line-height: 16px;
+}
+.card__info-specs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.card__info-specs_item {
+  background-color: light-dark(#eaecf0, #272a34);
+  color: light-darK(#1d212b, #c0c5ce);
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: calc(infinity * 1px);
+  padding: 2px 8px;
+}
+.card__info-price {
+  display: flex;
+  flex-direction: column;
+}
+.card__info-price_new {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.card__info-price_old {
+  color: #788191;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: line-through;
+}/*# sourceMappingURL=card.css.map */
+    </style>
+    <title>Аркейн</title>
+</head>
+<body>
+    <div class="spacing"></div>
+
+    <div class="header">
+        <div class="header__cont">
+            <div class="header__cont-logo" onclick="window.location.href='index.html'">
+                Аркейн
+            </div>
+            <div class="header__cont-nav">
+                <a href="index.html" class="header__cont-nav_a header__cont-nav_a-active">Главная</a>
+                <a href="catalog.html" class="header__cont-nav_a">Каталог</a>
+            </div>
+            <div class="header__cont-menu">
+                <button class="header__cont-menu_btn" onclick="themeChange()">
+                    <img src="./assets/moon.svg" alt="Dark theme" class="header__cont-menu_btn-light">
+                    <img src="./assets/sun.svg" alt="Light theme" class="header__cont-menu_btn-dark hidden">
+                </button>
+                <button class="header__cont-menu_btn">
+                    <img src="./assets/cart.svg" alt="Cart" class="header__cont-menu_btn-img">
+                    <div class="header__cont-menu_btn-text">Корзина</div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero__cont">
+            <span class="hero__cont-news">
+                <div class="hero__cont-news_pulsar"></div>
+                Подборка для профессионалов
+            </span>
+            <div class="hero__cont-title">
+                <h1 class="hero__cont-title_h1">
+                    Машины, которые <br>
+                    <span>думают вместе с вами</span>
+                </h1>
+            </div>
+            <div class="hero__cont-subtitle">
+                <span class="hero__cont-subtitle_span">
+                    Тщательно отобранные ноутбуки для разработчиков, дизайнеров и творческих людей, <br>
+                    которые не готовы идти на компромисс в выборе инструментов, <br>
+                    с которыми работают весь день.
+                </span>
+            </div>
+            <div class="hero__cont-menu">
+                <button class="hero__cont-menu_btn" onclick="document.location='./catalog.html'">
+                    Перейти в каталог
+                    <img class="hero__cont-menu_btn-img" src="./assets/arrow.svg" alt="Arrow">
+                </button>
+                <button class="hero__cont-menu_btn" onclick="document.location='./catalog.html'">Новое</button>
+            </div>
+            <div class="hero__cont-advantages">
+                <div class="hero__cont-advantages_item">
+                    <span class="hero__cont-advantages_item-info">8+</span>
+                    <span class="hero__cont-advantages_item-name">Устройств</span>
+                </div>
+                <div class="hero__cont-advantages_item">
+                    <span class="hero__cont-advantages_item-info">7</span>
+                    <span class="hero__cont-advantages_item-name">Брэндов</span>
+                </div>
+                <div class="hero__cont-advantages_item">
+                    <span class="hero__cont-advantages_item-info">160 000 ₽</span>
+                    <span class="hero__cont-advantages_item-name">Средняя цена</span>
+                </div>
+                <div class="hero__cont-advantages_item">
+                    <span class="hero__cont-advantages_item-info">APPLE</span>
+                    <span class="hero__cont-advantages_item-name">Лучший выбор</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="spliter"></div>
+
+    <div class="arrivals">
+        <div class="arrivals-head">
+            <div class="arrivals-head_text">
+                <p class="arrivals-head_text-subtitle subtitle">УЖЕ ТУТ</p>
+                <h2 class="arrivals-head_text-title title">Новинки</h2>
+            </div>
+            <a href="./catalog.html" class="arrivals-head_btn">Смотреть всё</a>
+        </div>
+        <div class="arrivals-box">
+
+        </div>
+    </div>
+
+    <div class="spliter"></div>
+
+    <div class="categories">
+        <div class="categories__cont">
+            <div class="categories__cont-head">
+                <p class="categories__cont-head_subtitle subtitle">КАТЕГОРИИ</p>
+                <h2 class="categories__cont-head_title title">Типы ноутбуков</h2>
+            </div>
+            <div class="categories__cont-box">
+                <button class="categories__cont-box_card" onclick="document.location='./catalog.html'">
+                    <div class="categories__cont-box_card-div">
+                        <!-- svg -->
+                         <img class="categories__cont-box_card-img" src="./assets/pallete-light.svg" alt="Pallete">
+                        <div class="categories__cont-box_card-text">
+                           <h3 class="categories__cont-box_card-text_title">Творческий</h3>
+                            <p class="categories__cont-box_card-text_description">
+                                Производительность + точность цветов
+                            </p>
+                        </div>
+                        <span class="categories__cont-box_card-btn">
+                            2 модели
+                        </span>
+                    </div>
+                </button>
+                <button class="categories__cont-box_card" onclick="document.location='./catalog.html'">
+                    <div class="categories__cont-box_card-div">
+                        <!-- svg -->
+                         <img class="categories__cont-box_card-img" src="./assets/gamepad-light.svg" alt="what">
+                        <div class="categories__cont-box_card-text">
+                           <h3 class="categories__cont-box_card-text_title">Игровой</h3>
+                            <p class="categories__cont-box_card-text_description">
+                                Высокая частота кадров. Без компромиссов
+                            </p>
+                        </div>
+                        <span class="categories__cont-box_card-btn">
+                            3 модели
+                        </span>
+                    </div>
+                </button>
+                <button class="categories__cont-box_card" onclick="document.location='./catalog.html'">
+                    <div class="categories__cont-box_card-div">
+                        <!-- svg -->
+                         <img class="categories__cont-box_card-img" src="./assets/case-light.svg" alt="Case">
+                        <div class="categories__cont-box_card-text">
+                           <h3 class="categories__cont-box_card-text_title">Профессиональный</h3>
+                            <p class="categories__cont-box_card-text_description">
+                                Для совещаний и не только
+                            </p>
+                        </div>
+                        <span class="categories__cont-box_card-btn">
+                            2 модели
+                        </span>
+                    </div>
+                </button>
+                <button class="categories__cont-box_card" onclick="document.location='./catalog.html'">
+                    <div class="categories__cont-box_card-div">
+                        <!-- svg -->
+                        <img class="categories__cont-box_card-img" src="./assets/rocket-light.svg" alt="Rocket">
+                        <div class="categories__cont-box_card-text">
+                           <h3 class="categories__cont-box_card-text_title">Ультрабук</h3>
+                            <p class="categories__cont-box_card-text_description">
+                                Бери с собой куда угодно
+                            </p>
+                        </div>
+                        <span class="categories__cont-box_card-btn">
+                            2 модели
+                        </span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="featured">
+        <div class="featured-head">
+            <div class="featured-head_text">
+                <p class="featured-head_text-subtitle subtitle">ВЫБОР РЕДАКЦИИ</p>
+                <h2 class="featured-head_text-title title">Лучшие устройства</h2>
+            </div>
+            <a href="./catalog.html" class="featured-head_btn">Смотреть всё</a>
+        </div>
+        <div class="featured-box">
+
+        </div>
+    </div>
+
+    <div class="brands">
+        <div class="brands__cont">
+            <div class="brands__cont-head">
+                <p class="brands__cont-head_subtitle subtitle">В НАШЕМ КАТАЛОГЕ</p>
+                <h2 class="brands__cont-head_title title">Имеющиеся брэнды</h2>
+            </div>
+            <div class="brands__cont-box">
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">Apple</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Премиум, дизайн, надёжность, экосистема
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">HUAWEI</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Технологии, стиль, бесшовная связь
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">Lenovo</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Практичные решения для всех
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">Asus</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Производительность и смелый дизайн
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">MSI</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Игровые монстры без компромиссов
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">HONOR</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Лёгкость, стиль, умные технологии
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">THUNDEROBOT</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Игровые ноутбуки без переплат
+                    </p>
+                </div>
+                <div class="brands__cont-box_card">
+                    <h3 class="brands__cont-box_card-title">Microsoft</h3>
+                    <p class="brands__cont-box_card-subtitle">
+                        Гибкие трансформеры от Microsoft
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="comments">
+        <div class="comments__cont">
+            <div class="comments__cont-head">
+                <p class="comments__cont-head_subtitle subtitle">ПРОВЕРЕНО ПРОФЕССИОНАЛАМИ</p>
+                <h2 class="comments__cont-head_title title">Комментарии от пользователей</h2>
+            </div>
+            <div class="comments__cont-box">
+                <div class="comments__cont-box_card">
+                    <div class="comments__cont-box_card-stars">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                    </div>
+                    <p class="comments__cont-box_card-text">
+                        “Я скептически относился к покупке ноутбука онлайн, но подбор Arcane всё упростил. Взял MacBook Pro 15 M5 — лучшее решение за всю мою карьеру.”
+                    </p>
+                    <p class="comments__cont-box_card-name">Миа Танака</p>
+                    <p class="comments__cont-box_card-job">Ведущий iOS-разработчик</p>
+                </div>
+                <div class="comments__cont-box_card">
+                    <div class="comments__cont-box_card-stars">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                    </div>
+                    <p class="comments__cont-box_card-text">
+                        “Разбор характеристик и честные описания помогли выбрать подходящую машину, не продираясь сквозь маркетинговую шелуху. HONOR пришёл в идеальном состоянии.”
+                    </p>
+                    <p class="comments__cont-box_card-name">Карлос Ривера</p>
+                    <p class="comments__cont-box_card-job">Моушн-дизайнер</p>
+                </div>
+                <div class="comments__cont-box_card">
+                    <div class="comments__cont-box_card-stars">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                        <img src="./assets/Star.svg" alt="Star">
+                    </div>
+                    <p class="comments__cont-box_card-text">
+                        “Заказал MacBook Air 13 — он почти ничего не весит. Три месяца спустя — всё ещё лучшее, что есть в моей сумке. Качество сайта соответствовало качеству товара.”
+                    </p>
+                    <p class="comments__cont-box_card-name">Элиф Йылмаз</p>
+                    <p class="comments__cont-box_card-job">Фулстек-разработчик</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="advantages">    
+        <div class="advantages__cont-head">
+            <p class="advantages__cont-head_subtitle subtitle">ПОЧЕМУ ARCANE</p>
+            <h2 class="advantages__cont-head_title title">Наши преимущества</h2>
+        </div>
+        <div class="advantages__cont-box">
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/Scooter.svg" alt="Scooter">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">Бесплатная доставка</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        От $500. На следующий день — в большинстве регионов
+                    </p>
+                </div>
+            </div>
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/Shield.svg" alt="Shield">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">3 года гарантии</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        Расширенное покрытие на все устройства без лишних вопросов.
+                    </p>
+                </div>
+            </div>
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/CPU.svg" alt="CPU">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">Экспертный отбор</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        Каждое устройство проверяем сами — бенчмарки и реальные тесты.
+                    </p>
+                </div>
+            </div>
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/Box.svg" alt="Box">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">Лёгкий возврат</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        Передумали? Верните за 30 дней без проблем.
+                    </p>
+                </div>
+            </div>
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/Global.svg" alt="Global">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">Доставка по всему миру</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        Отправляем в более чем 120 стран — полное отслеживание.
+                    </p>
+                </div>
+            </div>
+            <div class="advantages__cont-box_card">
+                <div class="advantages__cont-box_card-icon">
+                    <img class="advantages__cont-box_card-icon_img" src="./assets/Bolt.svg" alt="Bolt">
+                </div>
+                <div class="advantages__cont-box_card-text">
+                    <h3 class="advantages__cont-box_card-text_title">Быстрая настройка</h3>
+                    <p class="advantages__cont-box_card-text_description">
+                        Предустановленные параметры — ноутбук прибудет готовым к работе.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subscribe">
+        <div class="subscribe__box">
+            <p class="subscribe__box-subtitle">ОСТАВАЙТЕСЬ В КУРСЕ</З>
+            <h2 class="subscribe__box-title">
+                Новинки, эксклюзивные предложения, подборки экспертов.
+            </h2>
+            <p class="subscribe__box-description">
+                Без спама. Одно письмо, когда в каталоге появляется <br> что-то действительно стоящее. Отписаться можно в любой момент.
+            </p>
+            <form action="" class="subscribe__box-form">
+                <input type="email" placeholder="you@domain.com" class="subscribe__box-form_input">
+                <button class="subscribe__box-form_btn">Подписаться</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer__cont">
+            <div class="footer__cont-main">
+                <div class="footer__cont-main_box">
+                    <button class="footer__cont-main_box-logo" onclick="document.location='./index.html'">
+                        Аркейн
+                    </button>
+                    <p class="footer__cont-main_box-description">
+                        Тщательно отобранные ноутбуки для тех, кто работает на совесть.
+                    </p>
+                    <div class="footer__cont-main_box-links">
+                        <button class="footer__cont-main_box-links_btn">
+
+                        </button>
+                        <button class="footer__cont-main_box-links_btn">
+
+                        </button>
+                        <button class="footer__cont-main_box-links_btn">
+
+                        </button>
+                    </div>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">МАГАЗИН</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Все ноутбуки
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Профессиональные
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Игровые
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Ультрабуки
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="./catalog.html" class="footer__cont-main_box-list_item-link">
+                                Творческие
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">КОМПАНИЯ</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                О нас
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Блог
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Карьера
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Пресса
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">ПОДДЕРЖКА</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Центр помощи
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Доставка
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Возврат
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Гарантия
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__cont-main_box">
+                    <h4 class="footer__cont-main_box-title">ПРАВОВАЯ ИНФОРМАЦИЯ</h4>
+                    <ul class="footer__cont-main_box-list">
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Политика конфиденциальности
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Условия использования
+                            </a>
+                        </li>
+                        <li class="footer__cont-main_box-list_item">
+                            <a href="#" class="footer__cont-main_box-list_item-link">
+                                Настройки файлов cookie
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__cont-end">
+                <p class="footer__cont-end_p">
+                    © 2026 Arcane Technologies. Все права защищены.
+                </p>
+                <p class="footer__cont-end_p">
+                    Сделано с душой. Продумано наперёд.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      // Сокращения
+const doc = document;
+const body = doc.body;
+const ls = localStorage;
+
+// 1. Контейнеры
+    // Новые поставки
+const contNew = doc.querySelector('.arrivals-box');
+    // Часть каталога
+const contFeat = doc.querySelector('.featured-box');
+    // Все товары
+const catalog = doc.querySelector('.catalog__cont-box');
+
+let bodyTheme = window.getComputedStyle(body).colorScheme;
+let theme = ls.getItem('theme') || bodyTheme;
+
+doc.addEventListener("DOMContentLoaded", () => {
+    const bodyTheme = document.querySelector('body');
+    const colorScheme = ls.getItem('theme') || (window.getComputedStyle(bodyTheme).colorScheme) ;
+    body.style.colorScheme = theme;
+    const lightImg = doc.querySelector('.header__cont-menu_btn-light');
+    const darkImg = doc.querySelector('.header__cont-menu_btn-dark');
+    if (colorScheme == 'light') {
+        darkImg.classList.add('hidden');
+        lightImg.classList.remove('hidden');
+    }
+    else if (colorScheme == 'dark') {
+        darkImg.classList.remove('hidden');
+        lightImg.classList.add('hidden');
+    }
+    ls.setItem('theme', colorScheme);
+});
+
+async function processData() {
+  try {
+    const response = await fetch('./js/main.json');
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Ошибка:", error);
+  }
+}; 
+
+function productCard(info, id) {
+    const card = doc.createElement('div');
+    card.className = 'card';
+    card.setAttribute('onclick', `openProduct(${id})`);
+    card.innerHTML = `
+        <div class="card__image">
+            <img src="${info.image_url}" alt="Laptop Image">
+        </div>
+        <div class="card__info">
+            <div class="card__info-name">
+                <p class="card__info-name_brand">${info.brand}</p>
+                <h3 class="card__info-name_model">${info.name}</h3>
+            </div>
+            <div class="card__info-rating">
+                <div class="card__info-rating_stars">
+                    <img src="./assets/Star.svg" alt="Star">
+                    <img src="./assets/Star.svg" alt="Star">
+                    <img src="./assets/Star.svg" alt="Star">
+                    <img src="./assets/Star.svg" alt="Star">
+                    <img src="./assets/Star.svg" alt="Star">
+                </div>
+                <span class="card__info-rating_reviews">${info.rating} (${info.review_count})</span>
+            </div>
+            <div class="card__info-specs">
+                <span class="card__info-specs_item">${info.specs.ram}</span>
+                <span class="card__info-specs_item">${info.specs.storage}</span>
+            </div>
+            <div class="card__info-price">
+                <span class="card__info-price_new">${info.price} ₽</span>
+                <span class="card__info-price_old">${info.original_price} ${(info.original_price != '') ? "₽" : ""}</span>
+            </div>
+        </div>`
+    return card;
+};
+
+function product(info, category) {
+    const product = doc.createElement('div');
+    product.className = 'product';
+    product.innerHTML = `
+        <div class="product__cont">
+            <button class="product__cont-back">Назад в каталог</button>
+            <div class="product__cont-main">
+                <div class="product__cont-main_image">
+                    <img src="${info.image_url}" alt="Photo">
+                </div>
+                <div class="product__cont-main_info">
+                    <div class="product__cont-main_info-bc">
+                        <span class="product__cont-main_info-bc_brand">${info.brand}</span>
+                        <span class="product__cont-main_info-bc_splinter">·</span>
+                        <span class="product__cont-main_info-bc_category">${category}</span>
+                    </div>
+                    <div class="product__cont-main_info-name">${info.name}</div>
+                    <div class="product__cont-main_info-rating">
+                        <div class="product__cont-main_info-rating_stars">
+                            <img src="./assets/Star.svg" alt="Star">
+                            <img src="./assets/Star.svg" alt="Star">
+                            <img src="./assets/Star.svg" alt="Star">
+                            <img src="./assets/Star.svg" alt="Star">
+                            <img src="./assets/Star.svg" alt="Star">
+                        </div>
+                        <span class="product__cont-main_info-rating_count">${info.rating}</span>
+                        <span class="product__cont-main_info-rating_reviews">(${info.review_count} reviews)</span>
+                    </div>
+                    <div class="product__cont-main_info-price">
+                        <span class="product__cont-main_info-price_new">${info.price} ₽</span>
+                        <span class="product__cont-main_info-price_original">${info.original_price} ${(info.original_price != '') ? "₽" : ""}</span>
+                    </div>
+                    <p class="product__cont-main_info-description">${info.description}</p>
+                    <div class="product__cont-main_info-specs">
+                        <div class="product__cont-main_info-specs_head">
+                            <h3 class="product__cont-main_info-specs_head-title">Характеристики</h3>
+                        </div>
+                        <div class="product__cont-main_info-specs_list">
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/CPU.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec">Процессор</span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info">${info.specs.cpu}</span>
+                                </div>
+                            </div>
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/memory.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec">Память</span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info">${info.specs.ram}</span>
+                                </div>
+                            </div>
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/ssd.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec">Хранилище</span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info">${info.specs.storage}</span>
+                                </div>
+                            </div>
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/monitor.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec">Экран</span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info">${info.specs.display}</span>
+                                </div>
+                            </div>
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/battery.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec">Батарея</span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info">${info.specs.battery}</span>
+                                </div>
+                            </div>
+                            <div class="product__cont-main_info-specs_list-item">
+                                <div class="product__cont-main_info-specs_list-item_icon">
+                                    <img src="./assets/weight.svg" alt="CPU">
+                                </div>
+                                <div class="product__cont-main_info-specs_list-item_text">
+                                    <span class="product__cont-main_info-specs_list-item_text-spec">Вес</span>
+                                    <span class="product__cont-main_info-specs_list-item_text-info">${info.specs.weight}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `
+    const backBtn = product.querySelector('.product__cont-back');
+    backBtn.addEventListener('click', ()=>{
+        product.remove();
+        body.style.overflow = 'auto';
+    });
+    return product;
+};
+
+function openProduct(id) {
+    processData().then(array => {
+        const laptop = array.products.find(element => element.id == id);
+        const category = array.categories.find(cat => cat.id == laptop.category_id);
+        body.appendChild(product(laptop, category.name))
+    });
+    body.style.overflow = 'hidden';
+};
+
+function closeProduct(el) {
+    el.remove()
+}
+
+processData().then(array => {
+    if (doc.querySelector('title').textContent == "Аркейн") {
+        array.products.forEach(element => {
+            if (element.is_new == true) {
+                const card = productCard(element, element.id);
+                contNew.appendChild(card);
+            }
+        });
+        array.products.forEach(element => {
+            if (element.is_featured == 1) {
+                const card = productCard(element, element.id);
+                contFeat.appendChild(card);
+            }
+        });
+    } else if (doc.querySelector('title').textContent == "Аркейн Каталог") {
+        array.products.forEach(element => {
+            const card = productCard(element, element.id);
+            catalog.appendChild(card);
+        });
+    } else { return }
+});
+
+function themeChange() {
+    let scheme = ls.getItem('theme') || 'light';
+    const el = doc.querySelector('body');
+    const lightImg = doc.querySelector('.header__cont-menu_btn-light');
+    const darkImg = doc.querySelector('.header__cont-menu_btn-dark')
+    let changedTheme;
+    if (scheme == 'light') {
+        changedTheme = 'dark'
+        darkImg.classList.remove('hidden');
+        lightImg.classList.add('hidden')
+    }
+    else {
+        changedTheme = 'light'
+        darkImg.classList.add('hidden');
+        lightImg.classList.remove('hidden')
+    }
+    ls.setItem('theme', changedTheme);
+    el.style.colorScheme = changedTheme; 
+    console.log(changedTheme)
+};
+
+// if (doc.querySelector('title').textContent == "Аркейн") {
+//     console.log('Это главная страница')
+// } else if (doc.querySelector('title').textContent == "Аркейн Каталог") {
+//     console.log('Это каталог')
+// }
+    </script>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/utils.js"></script>
+</body>
+</html>

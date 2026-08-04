@@ -1,0 +1,231 @@
+
+{
+    "categories": [
+        {
+            "id": "1",
+            "name": "Творческий"
+        }, 
+        {
+            "id": "2",
+            "name": "Игровой"
+        },
+        {
+            "id": "3",
+            "name": "Профессиональный"
+        },
+        {
+            "id": "4",
+            "name": "Ультрабук"
+        }        
+    ],
+    "products": [
+
+        {
+            "id": 1,
+            "name": "TUF Gaming A18",
+            "brand": "ASUS",
+            "category_id": 2,
+            "price": "183 999",
+            "original_price": "199 999",
+            "image_url": "/assets/laptops/ASUSTUFGamingA18.avif",
+            "description": "Мощный игровой ноутбук с большим 18-дюймовым дисплеем, производительным железом Ryzen и RTX-графикой, обеспечивающий высокую производительность в современных играх.",
+            "specs": {
+                "cpu": "AMD Ryzen 7 260",
+                "ram": "32ГБ DDR5",
+                "weight": "2.6кг",
+                "battery": "100Вт 18ч",
+                "display": "18\" Full HD IPS 144Гц",
+                "storage": "1ТБ SSD"
+            },
+            "rating": "4.8",
+            "review_count": "234",
+            "in_stock": true,
+            "is_featured": true,
+            "is_new": false
+        },
+        {
+            "id": 2,
+            "name": "MacBook Pro 14 M5",
+            "brand": "Apple",
+            "category_id": 3,
+            "price": "167 990",
+            "original_price": "",
+            "image_url": "/assets/laptops/AppleMacBookPro14M5.avif",
+            "description": "Компактный и мощный ноутбук с чипом M5, обеспечивающий высокую производительность, отличный дисплей и продвинутые возможности для работы и творчества.",
+            "specs": {
+                "cpu": "Apple M5",
+                "ram": "16ГБ LPDDR5X",
+                "weight": "1.55кг",
+                "battery": "85Вт 24ч",
+                "display": "14.2\" 3К Liquid Ratina XDR 120Гц",
+                "storage": "512ГБ SSD"
+            },
+            "rating": "4.7",
+            "review_count": "189",
+            "in_stock": true,
+            "is_featured": true,
+            "is_new": true
+        },
+        {
+            "id": 3,
+            "name": "MateBook D 16",
+            "brand": "HUAWEI",
+            "category_id": 4,
+            "price": "67 999",
+            "original_price": "72 999",
+            "image_url": "/assets/laptops/HUAWEIMateBookD16.avif",
+            "description": "Универсальный ноутбук с большим 16-дюймовым экраном, производительными процессорами Intel Core и лёгким корпусом, подходящий для работы, учёбы и повседневных задач.",
+            "specs": {
+                "cpu": "Intel Core i5 13420H ",
+                "ram": "16ГБ LPDDR4X",
+                "weight": "1.72кг",
+                "battery": "28Вт 7ч",
+                "display": "16\" Full HD IPS 60Гц",
+                "storage": "1ТБ SSD"
+            },
+            "rating": "4.6",
+            "review_count": "156",
+            "in_stock": true,
+            "is_featured": true,
+            "is_new": false
+        },
+        {
+            "id": 4,
+            "name": "Yoga 7",
+            "brand": "Lenovo",
+            "category_id": 1,
+            "price": "80 260",
+            "original_price": "86 190",
+            "image_url": "/assets/laptops/LenovoYoga7.avif",
+            "description": "Универсальный ноутбук-трансформер с сенсорным экраном и поворотным механизмом, позволяющий использовать его как планшет и комфортно работать в разных режимах.",
+            "specs": {
+                "cpu": "Intel Core Ultra 5",
+                "ram": "16ГБ LPDDR5X",
+                "weight": "1.92кг",
+                "battery": "100Вт 18ч",
+                "display": "16\" Full HD IPS 60Гц",
+                "storage": "512ГБ SSD"
+            },
+            "rating": "4.9",
+            "review_count": "412",
+            "in_stock": true,
+            "is_featured": true,
+            "is_new": true
+        },
+        {
+            "id": 5,
+            "name": "MagicBook Pro 16",
+            "brand": "HONOR",
+            "category_id": 1,
+            "price": "129 999",
+            "original_price": "154 999",
+            "image_url": "/assets/laptops/HONORMagicBookPro16.avif",
+            "description": "Мощный 16-дюймовый ноутбук с современными процессорами Intel Core Ultra, высококачественным дисплеем и хорошим балансом производительности для работы, творчества и развлечений.",
+            "specs": {
+                "cpu": "Intel Core Ultra 5",
+                "ram": "24ГБ LPDDR5X",
+                "weight": "1.83кг",
+                "battery": "100Вт 18ч",
+                "display": "16\" 3K IPS 165Гц",
+                "storage": "1ТБ SSD"
+            },
+            "rating": "4.7",
+            "review_count": "98",
+            "in_stock": true,
+            "is_featured": true,
+            "is_new": false
+        },
+        {
+            "id": 6,
+            "name": "MacBook Air 13",
+            "brand": "Apple",
+            "category_id": 3,
+            "price": "64 599",
+            "original_price": "69 999",
+            "image_url": "/assets/laptops/AppleMacBookAir13.avif",
+            "description": "Лёгкий и тонкий ноутбук с чипом Apple Silicon, отличной автономностью и тихой работой, идеально подходящий для повседневных задач и учёбы.",
+            "specs": {
+                "cpu": "Apple M1",
+                "ram": "8ГБ DDR4",
+                "weight": "1.29кг",
+                "battery": "64Вт 18ч",
+                "display": "13.3\" 2.5K IPS 60Гц",
+                "storage": "256ГБ SSD"
+            },
+            "rating": "4.5",
+            "review_count": "207",
+            "in_stock": true,
+            "is_featured": false,
+            "is_new": false
+        },
+        {
+            "id": 7,
+            "name": "Gravity 16 Max G5",
+            "brand": "Thunderobot ",
+            "category_id": 2,
+            "price": "232 260",
+            "original_price": "236 999",
+            "image_url": "/assets/laptops/ThunderobotGravity16MaxG5.avif",
+            "description": "Мощный игровой ноутбук с 16-дюймовым экраном высокой частоты обновления, производительным процессором и видеокартой RTX, рассчитанный на комфортный гейминг и ресурсоёмкие задачи.",
+            "specs": {
+                "cpu": "Intel Core i9 14900HX",
+                "ram": "32ГБ DDR5",
+                "weight": "2.6кг",
+                "battery": "100Вт 18ч",
+                "display": "16\" 2.5К IPS 300Гц",
+                "storage": "1ТБ SSD"
+            },
+            "rating": "4.56",
+            "review_count": "72",
+            "in_stock": true,
+            "is_featured": false,
+            "is_new": false
+        },
+        {
+            "id": 8,
+            "name": "Cyborg 17",
+            "brand": "MSI",
+            "category_id": 2,
+            "price": "145 999",
+            "original_price": "159 999",
+            "image_url": "/assets/laptops/MSICyborg17.avif",
+            "description": "Игровой ноутбук с большим 17,3-дюймовым дисплеем 144 Гц, мощным процессором Intel Core и графикой RTX, обеспечивающий плавный гейминг и высокую производительность.",
+            "specs": {
+                "cpu": "Intel Core 7 240H",
+                "ram": "16ГБ DDR5",
+                "weight": "2.2кг",
+                "battery": "75Вт 7ч",
+                "display": "17.3\" Full HD IPS 144Гц",
+                "storage": "1ТБ SSD"
+            },
+            "rating": "4.6",
+            "review_count": "143",
+            "in_stock": true,
+            "is_featured": false,
+            "is_new": true
+        },
+        {
+            "id": 9,
+            "name": "IdeaPad Slim 3",
+            "brand": "Lenovo",
+            "category_id": 4,
+            "price": "70 999",
+            "original_price": "",
+            "image_url": "/assets/laptops/LenovoIdeaPadSlim3.webp",
+            "description": "Доступный и лёгкий ноутбук с базовой производительностью и тонким корпусом, идеально подходящий для повседневных задач, учёбы и работы.",
+            "specs": {
+                "cpu": "Intel Core i5 13420H",
+                "ram": "16ГБ DDR5",
+                "weight": "2.6кг",
+                "battery": "60Вт 18ч",
+                "display": "16\" Full HD IPS 60Гц",
+                "storage": "1ТБ SSD"
+            },
+            "rating": "4.5",
+            "review_count": "119",
+            "in_stock": true,
+            "is_featured": true,
+            "is_new": false
+        }
+    ]
+}

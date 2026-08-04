@@ -1,0 +1,115 @@
+@keyframes fade-in {
+  from {
+    transform: translatey(50px) scale(0.9);
+    opacity: 0.5;
+    filter: blur(5px);
+  }
+  to {
+    transform: translatey(0) scale(1);
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+.card {
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  background-color: light-dark(#fbfaf9, #1b1e27);
+  color: rgb(0, 0, 0);
+  width: 352px;
+  border-radius: 16px;
+  margin: auto;
+  transform: scale(1) translate(0);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px light-dark(#e9e9e9, rgba(29, 29, 29, 0.692));
+  overflow: hidden;
+}
+.card:hover {
+  transition: all 0.5s;
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 10px light-dark(#e9e9e9, rgba(29, 29, 29, 0.692));
+}
+.card:hover img {
+  transform: scale(1.05);
+}
+.card__image {
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+.card__image img {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+.card__info {
+  height: 177.5px;
+  padding: 16px;
+}
+.card__info-name {
+  margin-bottom: 4px;
+}
+.card__info-name_brand {
+  color: #788191;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.card__info-name_model {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.5px;
+}
+.card__info-rating {
+  margin-block: 8px 12px;
+  display: flex;
+  gap: 6px;
+}
+.card__info-rating_stars {
+  display: flex;
+  gap: 2px;
+}
+.card__info-rating_stars img {
+  height: 12px;
+  margin-block: auto;
+}
+.card__info-rating_reviews {
+  color: #788191;
+  font-size: 12px;
+  line-height: 16px;
+}
+.card__info-specs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+.card__info-specs_item {
+  background-color: light-dark(#eaecf0, #272a34);
+  color: light-darK(#1d212b, #c0c5ce);
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: calc(infinity * 1px);
+  padding: 2px 8px;
+}
+.card__info-price {
+  display: flex;
+  flex-direction: column;
+}
+.card__info-price_new {
+  color: light-dark(#1d212b, #e2e4e9);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+.card__info-price_old {
+  color: #788191;
+  font-size: 12px;
+  line-height: 16px;
+  text-decoration: line-through;
+}/*# sourceMappingURL=card.css.map */

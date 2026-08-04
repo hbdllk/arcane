@@ -1,0 +1,237 @@
+$accentColor: light-dark(#2c56c9, #587ee4);
+$mainColor: light-dark(#1d212b, #e2e4e9);
+$secondColor: light-dark(#788191, #788191);
+
+.product {
+    background-color: light-dark(#f7f5f3, #15171e);
+    height: 100dvh;
+    width: 100vw;
+    padding-top: 65px;
+    border-bottom: 1px soliod #2d3039;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    &__cont {
+        max-width: 72rem;
+        margin-inline: auto;
+        padding: 32px;
+
+        &-back {
+            cursor: pointer;
+            background-color: transparent;
+            color: $secondColor;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 20px;
+            margin-bottom: 10px;
+            border: none;
+
+            &:hover {
+                color: $accentColor;
+                transform: translatex(-5px);
+            }
+        }
+
+        &-main {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 48px;
+            padding-top: 32px;
+
+            &_first {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+                &-image {
+                    background-color: #1b1e27;
+                    overflow: hidden;
+                    aspect-ratio: 1 / 1;
+                    width: 100%;
+                    border-radius: 24px;
+                }
+
+                &-btn {
+                    cursor: pointer;
+                    background-color: #272a34;
+                    font-size: 16px;
+                    font-weight: 600;
+                    padding-block: 15px;
+                    border: 0 solid transparent;
+                    border-radius: calc(infinity * 1px);
+
+                    &:hover {
+                        border: 1px solid $accentColor;
+                        transform: scale(1.025);
+                    }
+                }
+            }
+
+            
+
+            &_info {
+                &-bc {
+                    margin-bottom: 4px;
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+
+                    &_brand {
+                        color: $accentColor;
+                        font-size: 14px;
+                        font-weight: 600;
+                        line-height: 20px;
+                        text-transform: uppercase;
+                    }
+
+                    &_splinter {
+                        color: $secondColor;
+                        font-size: 16px;
+                        font-weight: 400;
+                        line-height: 24px;
+                    }
+
+                    &_category {
+                        color: $secondColor;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 20px;
+                    }
+                }
+
+                &-name {
+                    color: $mainColor;
+                    font-size: 30px;
+                    font-weight: 700;
+                    line-height: 38px;
+                    margin-bottom: 16px;
+                }
+
+                &-rating {
+                    margin-bottom: 20px;
+                    display: flex;
+                    gap: 8px;
+                    
+                    &_stars {
+                        display: flex;
+                        gap: 2px;
+
+                        & img {
+                            height: 12px;
+                            margin-block: auto;
+                        }
+                    }
+
+                    &_count {
+                        color: $mainColor;
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 20px;
+                    }
+
+                    &_reviews {
+                        color: $secondColor;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 20px;
+                    }
+                }
+
+                &-price {
+                    margin-bottom: 24px;
+                    display: flex;
+                    gap: 12px;
+                    align-items: baseline;
+
+                    &_new {
+                        color: $mainColor;
+                        font-size: 36px;
+                        font-weight: 700;
+                        line-height: 40px;
+                    }
+
+                    &_original {
+                        color: $secondColor;
+                        font-size: 20px;
+                        font-weight: 400;
+                        line-height: 28px;
+                        text-decoration: line-through;
+                    }
+                }
+
+                &-description {
+                    color: $secondColor;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 23px;
+                    margin-bottom: 28px;
+                }
+
+                &-specs {
+                    background-color: light-dark(#fbfaf9, #1b1e27);
+                    min-height: 100px;
+                    border-radius: 16px;
+
+                    &_head {
+                        padding: 16px 20px 4px;
+
+                        &-title {
+                            color: $mainColor;
+                            font-size: 14px;
+                            font-weight: 600;
+                            line-height: 20px;
+                            text-transform: uppercase;
+                            margin-bottom: 8px;
+                        }
+                    }
+
+                    &_list {
+                        padding: 0 20px 12px;
+
+                        &-item {
+                            padding-block: 14px;
+                            display: flex;
+                            gap: 12px;
+                            align-items: center;
+
+                            &_icon {
+                                background-color: light-dark(#e5eaf4, #21283a);
+                                aspect-ratio: 1 / 1;
+                                width: 32px;
+                                border-radius: calc(infinity * 1px);
+                                display: flex;
+
+                                & img {
+                                    width: 14px;
+                                    margin: auto;
+                                }
+                            }
+
+                            &_text {
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+
+                                &-spec {
+                                    color: $secondColor;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    line-height: 20px;
+                                }
+
+                                &-info {
+                                    color: $mainColor;
+                                    font-size: 14px;
+                                    font-weight: 500;
+                                    line-height: 20px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

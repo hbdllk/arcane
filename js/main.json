@@ -27,7 +27,7 @@
             "category_id": 2,
             "price": "183 999",
             "original_price": "199 999",
-            "image_url": "/assets/laptops/ASUSTUFGamingA18.avif",
+            "image_url": "./assets/laptops/ASUSTUFGamingA18.avif",
             "description": "Мощный игровой ноутбук с большим 18-дюймовым дисплеем, производительным железом Ryzen и RTX-графикой, обеспечивающий высокую производительность в современных играх.",
             "specs": {
                 "cpu": "AMD Ryzen 7 260",
@@ -50,7 +50,7 @@
             "category_id": 3,
             "price": "167 990",
             "original_price": "",
-            "image_url": "/assets/laptops/AppleMacBookPro14M5.avif",
+            "image_url": "./assets/laptops/AppleMacBookPro14M5.avif",
             "description": "Компактный и мощный ноутбук с чипом M5, обеспечивающий высокую производительность, отличный дисплей и продвинутые возможности для работы и творчества.",
             "specs": {
                 "cpu": "Apple M5",
@@ -73,7 +73,7 @@
             "category_id": 4,
             "price": "67 999",
             "original_price": "72 999",
-            "image_url": "/assets/laptops/HUAWEIMateBookD16.avif",
+            "image_url": "./assets/laptops/HUAWEIMateBookD16.avif",
             "description": "Универсальный ноутбук с большим 16-дюймовым экраном, производительными процессорами Intel Core и лёгким корпусом, подходящий для работы, учёбы и повседневных задач.",
             "specs": {
                 "cpu": "Intel Core i5 13420H ",
@@ -96,7 +96,7 @@
             "category_id": 1,
             "price": "80 260",
             "original_price": "86 190",
-            "image_url": "/assets/laptops/LenovoYoga7.avif",
+            "image_url": "./assets/laptops/LenovoYoga7.avif",
             "description": "Универсальный ноутбук-трансформер с сенсорным экраном и поворотным механизмом, позволяющий использовать его как планшет и комфортно работать в разных режимах.",
             "specs": {
                 "cpu": "Intel Core Ultra 5",
@@ -119,7 +119,7 @@
             "category_id": 1,
             "price": "129 999",
             "original_price": "154 999",
-            "image_url": "/assets/laptops/HONORMagicBookPro16.avif",
+            "image_url": "./assets/laptops/HONORMagicBookPro16.avif",
             "description": "Мощный 16-дюймовый ноутбук с современными процессорами Intel Core Ultra, высококачественным дисплеем и хорошим балансом производительности для работы, творчества и развлечений.",
             "specs": {
                 "cpu": "Intel Core Ultra 5",
@@ -142,7 +142,7 @@
             "category_id": 3,
             "price": "64 599",
             "original_price": "69 999",
-            "image_url": "/assets/laptops/AppleMacBookAir13.avif",
+            "image_url": "./assets/laptops/AppleMacBookAir13.avif",
             "description": "Лёгкий и тонкий ноутбук с чипом Apple Silicon, отличной автономностью и тихой работой, идеально подходящий для повседневных задач и учёбы.",
             "specs": {
                 "cpu": "Apple M1",
@@ -165,7 +165,7 @@
             "category_id": 2,
             "price": "232 260",
             "original_price": "236 999",
-            "image_url": "/assets/laptops/ThunderobotGravity16MaxG5.avif",
+            "image_url": "./assets/laptops/ThunderobotGravity16MaxG5.avif",
             "description": "Мощный игровой ноутбук с 16-дюймовым экраном высокой частоты обновления, производительным процессором и видеокартой RTX, рассчитанный на комфортный гейминг и ресурсоёмкие задачи.",
             "specs": {
                 "cpu": "Intel Core i9 14900HX",
@@ -188,7 +188,7 @@
             "category_id": 2,
             "price": "145 999",
             "original_price": "159 999",
-            "image_url": "/assets/laptops/MSICyborg17.avif",
+            "image_url": "./assets/laptops/MSICyborg17.avif",
             "description": "Игровой ноутбук с большим 17,3-дюймовым дисплеем 144 Гц, мощным процессором Intel Core и графикой RTX, обеспечивающий плавный гейминг и высокую производительность.",
             "specs": {
                 "cpu": "Intel Core 7 240H",
@@ -211,7 +211,7 @@
             "category_id": 4,
             "price": "70 999",
             "original_price": "",
-            "image_url": "/assets/laptops/LenovoIdeaPadSlim3.webp",
+            "image_url": "./assets/laptops/LenovoIdeaPadSlim3.webp",
             "description": "Доступный и лёгкий ноутбук с базовой производительностью и тонким корпусом, идеально подходящий для повседневных задач, учёбы и работы.",
             "specs": {
                 "cpu": "Intel Core i5 13420H",
